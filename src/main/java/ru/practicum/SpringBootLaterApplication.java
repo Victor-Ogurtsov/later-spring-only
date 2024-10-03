@@ -1,12 +1,12 @@
 package ru.practicum;
 
-//import org.springframework.boot.SpringApplication;
-//import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-//@SpringBootApplication
+@SpringBootApplication
 public class SpringBootLaterApplication {
     public static void main(String[] args) {
-        //SpringApplication.run(SpringBootLaterApplication.class, args);
+        SpringApplication.run(SpringBootLaterApplication.class, args);
     }
 }
