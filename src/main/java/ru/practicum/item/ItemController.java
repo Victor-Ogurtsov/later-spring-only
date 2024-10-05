@@ -2,6 +2,8 @@ package ru.practicum.item;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import ru.practicum.item.ItemDto.ItemDto;
+import ru.practicum.item.ItemDto.ItemMapper;
 
 import java.util.List;
 
@@ -10,16 +12,19 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ItemController {
     private final ItemService itemService;
+    private final ItemMapper itemMapper;
 
     @GetMapping
-    public List<Item> get(@RequestHeader("X-Later-User-Id") Long userId) {
-        return itemService.getItems(userId);
+    public List<ItemDto> get(@RequestHeader("X-Later-User-Id") Long userId) {
+
+        return itemMapper.toItemDtoList(itemService.getItems(userId));
     }
 
     @PostMapping
-    public Item add(@RequestHeader("X-Later-User-Id") Long userId,
+    public ItemDto add(@RequestHeader("X-Later-User-Id") Long userId,
                     @RequestBody Item item) {
-        return itemService.addNewItem(userId, item);
+
+        return itemMapper.toItemDto(itemService.addNewItem(userId, item));
     }
 
     @DeleteMapping("/{itemId}")

@@ -1,2 +1,7 @@
-package ru.practicum.user;public class UserState {
+package ru.practicum.user;
+
+public enum UserState {
+    ACTIVE,
+    BLOCKED,
+    DELETED;
 }

@@ -41,7 +41,7 @@ public class FakeUserRepository implements UserRepository {
         User fakeUser = new User();
         fakeUser.setId(id);
         fakeUser.setEmail("mail" + id + "@example.com" + " " + q);
-        fakeUser.setName("Akakiy Akakievich #" + id);
+        fakeUser.setFirstName("Akakiy Akakievich #" + id);
         return fakeUser;
     }
 }

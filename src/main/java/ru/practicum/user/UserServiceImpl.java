@@ -28,7 +28,9 @@ class UserServiceImpl implements UserService {
     public List<User> getAllUsers() {
         System.out.println("Внедрены настройки num и q из файла application.properties с внешними настройками " + num + " + " + q);
         log.info("Сервис - Возвращаем список пользователей");
-        return repository.findAll();
+        List<User> users = repository.findAll();
+        int a = 2;
+        return users;
     }
 
     @Override
