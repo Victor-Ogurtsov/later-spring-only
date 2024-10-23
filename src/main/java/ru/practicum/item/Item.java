@@ -14,14 +14,16 @@ import java.util.Set;
 @Entity
 @Table(name = "items")
 public class Item {
+
     @Id
-    @Column(name = "id")    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "user_id")
     private Long userId;
     @Column(name = "url")
     private String url;
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name="tags", joinColumns=@JoinColumn(name="item_id"))
     @Column(name="name")
     private Set<String> tags = new HashSet<>();

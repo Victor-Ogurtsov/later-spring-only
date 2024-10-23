@@ -44,5 +44,5 @@ public class User {
     private Instant registrationDate = Instant.now();
 
     @Enumerated(EnumType.STRING)
-    private UserState state;
+    private UserState state = UserState.ACTIVE;
 }

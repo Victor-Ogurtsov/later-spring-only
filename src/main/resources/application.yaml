@@ -5,9 +5,43 @@ spring:
     show-sql: true
     properties:
       hibernate.jdbc.time_zone: UTC
+    hibernate:
+      ddl-auto: none
   datasource:
     username: "dbuser"
     password: "12345"
-    url: "jdbc:postgresql://localhost:5432/later"
+    url: "jdbc:postgresql://localhost:6432/later"
     driver-class-name: "org.postgresql.Driver"
+  sql:
+    init:
+      mode: always
 
+# вывод запросов
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        orm:
+          jdbc:
+            bind: trace
+  # вывод значений, которые подставляются в параметры запросов
+
+
+hibernate:
+  dialect: org.hibernate.dialect.PostgreSQLDialect
+  show_sql: true
+
+javax:
+  persistence:
+    schema-generation:
+      database:
+        action: create
+      create-script-source: schema.sql
+
+#javax.persistence.schema-generation.database.action=create
+#javax.persistence.schema-generation.create-script-source=schema.sql
+
+settings:
+  num1: 4
+  num2: 9

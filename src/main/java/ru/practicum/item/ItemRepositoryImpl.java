@@ -1,4 +1,4 @@
-package ru.practicum.item;
+/*package ru.practicum.item;
 
 import org.springframework.stereotype.Repository;
 
@@ -37,3 +37,4 @@ public class ItemRepositoryImpl implements ItemRepository {
         items.remove(itemId);
     }
 }
+*/

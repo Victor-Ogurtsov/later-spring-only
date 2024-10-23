@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.user.dto.UserDto;
 import ru.practicum.user.dto.UserMapper;
+import ru.practicum.user.dto.UserRequestDto;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class UserController {
     }
 
     @PostMapping
-    public UserDto saveNewUser(@RequestBody User user) {
-        return userMapper.toUserDto(userService.saveUser(user));
+    public UserDto saveNewUser(@RequestBody UserRequestDto userRequestDto) {
+        return userMapper.toUserDto(userService.saveUser(userRequestDto));
     }
 }
