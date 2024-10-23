@@ -1,4 +1,4 @@
-package ru.practicum.item;
+/*package ru.practicum.item;
 
 import org.springframework.stereotype.Repository;
 
@@ -11,9 +11,9 @@ public class ItemRepositoryImpl implements ItemRepository {
     private final HashMap<Long, Item> items = new HashMap<Long, Item>();
 
     public ItemRepositoryImpl() {
-        items.put(1L, new Item(1L, 1L, "https://practicum.yandex.ru"));
-        items.put(2L, new Item(2L, 1L, "https://www.baeldung.com"));
-        items.put(3L, new Item(2L, 2L, "https://github.com"));
+        items.put(1L, new Item(1L, 1L, "https://practicum.yandex.ru", null));
+        items.put(2L, new Item(2L, 1L, "https://www.baeldung.com", null));
+        items.put(3L, new Item(3L, 2L, "https://github.com", null));
     }
 
     @Override
@@ -26,7 +26,7 @@ public class ItemRepositoryImpl implements ItemRepository {
         Long newId = 1 + items.keySet().stream()
                 .mapToLong(value -> value)
                 .max()
-                .orElse(1L);
+                .orElse(0);
         item.setId(newId);
         items.put(newId, item);
         return item;
@@ -37,3 +37,4 @@ public class ItemRepositoryImpl implements ItemRepository {
         items.remove(itemId);
     }
 }
+*/

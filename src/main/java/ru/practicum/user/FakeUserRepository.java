@@ -1,4 +1,4 @@
-package ru.practicum.user;
+/*package ru.practicum.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,12 +12,6 @@ import java.util.List;
 public class FakeUserRepository implements UserRepository {
 
     private final List<User> FAKE_USERS = createManyFakeUsers(2);
-    private final int q;
-
-    @Autowired
-    public FakeUserRepository(@Value("${settings.q}") int q) {
-        this.q = q;
-    }
 
     @Override
     public List<User> findAll() {
@@ -40,8 +34,8 @@ public class FakeUserRepository implements UserRepository {
     private User createFakeUser(long id) {
         User fakeUser = new User();
         fakeUser.setId(id);
-        fakeUser.setEmail("mail" + id + "@example.com" + " " + q);
-        fakeUser.setName("Akakiy Akakievich #" + id);
+        fakeUser.setEmail("mail" + id + "@example.com" );
+        fakeUser.setFirstName("Akakiy Akakievich #" + id);
         return fakeUser;
     }
-}
+}*/

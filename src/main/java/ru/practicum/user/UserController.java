@@ -2,6 +2,9 @@ package ru.practicum.user;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import ru.practicum.user.dto.UserDto;
+import ru.practicum.user.dto.UserMapper;
+import ru.practicum.user.dto.UserRequestDto;
 
 import java.util.List;
 
@@ -10,14 +13,15 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
     private final UserService userService;
+    private final UserMapper userMapper;
 
     @GetMapping
-    public List<User> getAllUsers() {
-        return userService.getAllUsers();
+    public List<UserDto> getAllUsers() {
+        return userMapper.toListUserDto(userService.getAllUsers());
     }
 
     @PostMapping
-    public User saveNewUser(@RequestBody User user) {
-        return userService.saveUser(user);
+    public UserDto saveNewUser(@RequestBody UserRequestDto userRequestDto) {
+        return userMapper.toUserDto(userService.saveUser(userRequestDto));
     }
 }
